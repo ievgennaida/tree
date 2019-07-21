@@ -1,4 +1,4 @@
-# rc-tree
+# Material UI there for the most advanced tree for react (rc-tree)
 ---
 
 tree ui component for react
@@ -24,13 +24,13 @@ tree ui component for react
 
 ## Screenshots
 
+Matererial theme:
+![loading example](https://user-images.githubusercontent.com/17121033/61591036-47041b00-abc1-11e9-8b96-51b7c89bde82.gif)
+![chrome-capture](https://user-images.githubusercontent.com/17121033/61591037-479cb180-abc1-11e9-8cb8-fa0e00e67b66.gif)
+![dark_mouse_over](https://user-images.githubusercontent.com/17121033/61591038-479cb180-abc1-11e9-8633-907da16b7153.gif)
+
+Default theme:
 <img src="https://t.alipayobjects.com/images/T15BpfXn8nXXXXXXXX.png" width="288"/>
-
-
-## Feature
-
-* Support all popular browsers, including Internet Explorer 9 and above.
-
 
 ## Example
 
