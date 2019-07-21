@@ -25,6 +25,7 @@ tree ui component for react
 ## Screenshots
 
 Matererial theme:
+
 ![loading example](https://user-images.githubusercontent.com/17121033/61591036-47041b00-abc1-11e9-8b96-51b7c89bde82.gif)
 ![chrome-capture](https://user-images.githubusercontent.com/17121033/61591037-479cb180-abc1-11e9-8cb8-fa0e00e67b66.gif)
 ![dark_mouse_over](https://user-images.githubusercontent.com/17121033/61591038-479cb180-abc1-11e9-8633-907da16b7153.gif)
@@ -38,10 +39,6 @@ http://localhost:8018/examples/
 
 online example: http://react-component.github.io/tree/examples/
 
-
-## install
-
-[![rc-tree](https://nodei.co/npm/rc-tree.png)](https://npmjs.org/package/rc-tree)
 
 ## Usage
 
