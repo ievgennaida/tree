@@ -1,0 +1,191 @@
+
+@treePrefixCls: rc-tree;
+.@{treePrefixCls} {
+  padding: 0px;
+  font-size: @fontSize;
+  font-family: @fontFamily;
+  font-weight: @fontWidth;
+  line-height: @lineHeight;
+  color: @foreColor;
+  letter-spacing: 0.00938em;
+  li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    white-space: nowrap;
+    outline: 0;
+    .draggable {
+      -moz-user-select: none;
+      -khtml-user-select: none;
+      -webkit-user-select: none;
+      user-select: none;
+      /* Required to make elements draggable in old WebKit */
+      -khtml-user-drag: element;
+      -webkit-user-drag: element;
+    }
+    &.drag-over {
+      > .draggable {
+        background-color: @activeColor;
+        opacity: 1;
+        font-weight: bold!important;
+        border: 0;
+      }
+    }
+    &.drag-over-gap-top {
+      > .draggable {
+        border-top: 1px @activeColor  solid;
+      }
+    }
+    &.drag-over-gap-bottom {
+      > .draggable {
+        border-bottom: 1px @activeColor  solid;
+      }
+    }
+    &.filter-node {
+      > .@{treePrefixCls}-node-content-wrapper {
+        background-color: @hoverColor !important;
+      }
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    .@{treePrefixCls}-node-content-wrapper {
+      padding: 1px 3px 0 0;
+      margin: 0;
+      cursor: pointer;
+      text-decoration: none;
+      vertical-align: top;
+      width: 100%;
+      min-height: @lineMinHeight;
+      height: @lineHeight; 
+      display: flex;
+      align-items: center;
+      &:hover {
+        background-color: @hoverColor;
+      }
+      &:hover {
+        background-color: @hoverColor;
+      }
+      &-disabled {
+        color: @disabledForeColor;
+      }
+    }
+    .@{treePrefixCls}-node-selected {
+      background-color: @activeColor  !important;
+      color: @foreColorActive;
+      font-weight: bold!important;
+    }
+    span {
+      &.@{treePrefixCls}-switcher,
+      &.@{treePrefixCls}-checkbox,
+      &.@{treePrefixCls}-iconEle {
+        line-height: 16px;
+        padding: 0px;
+        width: auto;
+        height: auto;
+        display: inline-block;
+        vertical-align: middle;
+        border: 0 none;
+        cursor: pointer;
+        outline: none;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+
+        &.@{treePrefixCls}-icon__customize {
+          background-image: none;
+        }
+      }
+      &.@{treePrefixCls}-switcher,
+      &.@{treePrefixCls}-icon_loading,
+      &.@{treePrefixCls}-checkbox {
+        padding: @buttonPadding;
+        width: @buttonSize;
+        height: @buttonSize;
+        display: inline-block;
+        background-position: @buttonPadding @buttonPadding;
+      }
+      &.@{treePrefixCls}-icon_loading {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' class='@{treePrefixCls}-rotate-circle-start' %3E%3Cstyle%3E@keyframes @{treePrefixCls}-rotate-circle %7B 0%25 %7B transform: rotate(0) %7D 100%25 %7B transform: rotate(360deg) %7D%0A%7D%0A@-moz-keyframes @{treePrefixCls}-rotate-circle %7B 0%25 %7B transform: rotate(0) %7D 100%25 %7B transform: rotate(360deg) %7D%0A%7D%0A@-ms-keyframes @{treePrefixCls}-rotate-circle %7B 0%25 %7B transform: rotate(0) %7D 100%25 %7B transform: rotate(360deg) %7D%0A%7D%0A@-webkit-keyframes @{treePrefixCls}-rotate-circle %7B 0%25 %7B transform: rotate(0) %7D 100%25 %7B transform: rotate(360deg) %7D%0A%7D%0A@-o-keyframes @{treePrefixCls}-rotate-circle %7B 0%25 %7B transform: rotate(0) %7D 100%25 %7B transform: rotate(360deg) %7D%0A%7D%0A.@{treePrefixCls}-rotate-circle-start%7B -webkit-ms-transform-origin: 50%25 50%25; -ms-transform-origin: 50%25 50%25; transform-origin: 50%25 50%25; transform-origin: center center; -moz-animation: @{treePrefixCls}-rotate-circle 1s infinite linear; -o-animation: @{treePrefixCls}-rotate-circle 1s infinite linear; -ms-animation: @{treePrefixCls}-rotate-circle 1s infinite linear; -webkit-animation: @{treePrefixCls}-rotate-circle 1s infinite linear; animation: @{treePrefixCls}-rotate-circle 1s infinite linear;%0A%7D %3C/style%3E%3Ccircle style='fill:none;stroke:@{progressColor};stroke-width:2;stroke-miterlimit:4;stroke-dasharray:48, 48;stroke-dashoffset:0;stroke-opacity:1' cy='12' cx='12' id='ellipse8' r='11' /%3E%3C/svg%3E");
+      }
+      &.@{treePrefixCls}-switcher {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'    viewBox='0 0 24 24'%3E%3Cpath fill='@{svgForeColor}' d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3Cpath fill='none'  d='M0 0h24v24H0V0z'/%3E%3C/svg%3E");
+        &.@{treePrefixCls}-switcher-noop {
+          cursor: auto;
+          background-image: none;
+        }
+        &.@{treePrefixCls}-switcher_open {
+          background-position: @buttonPadding @buttonPadding;
+        }
+        &.@{treePrefixCls}-switcher_close {
+          background-position: @buttonPadding @buttonPadding;
+          transform: rotate(-90deg);
+        }
+      }
+      &.@{treePrefixCls}-checkbox {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='@{checkboxColor}'  width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+        background-position: @buttonPadding @buttonPadding;
+        &-checked {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='@{checkboxCheckedColor}'  width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E");
+        }
+        &-indeterminate {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='@{checkboxIndeterminateColor}'  xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 24 24' width='24' height='24'%3E%3Cdefs%3E%3Cpath id='a' d='M0 0h24v24H0z'/%3E%3C/defs%3E%3CclipPath id='b'%3E%3Cuse xlink:href='%23a' overflow='visible'/%3E%3C/clipPath%3E%3Cpath clip-path='url(%23b)' d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z'/%3E%3C/svg%3E");
+        }
+        &-disabled  {          
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='@{checkboxDisabled}'  width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+        }
+        &.@{treePrefixCls}-checkbox-checked.@{treePrefixCls}-checkbox-disabled {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='@{checkboxDisabled}'  width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E");
+          
+        }
+        &.@{treePrefixCls}-checkbox-indeterminate.@{treePrefixCls}-checkbox-disabled {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='@{checkboxDisabled}'  xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 24 24' width='24' height='24'%3E%3Cdefs%3E%3Cpath id='a' d='M0 0h24v24H0z'/%3E%3C/defs%3E%3CclipPath id='b'%3E%3Cuse xlink:href='%23a' overflow='visible'/%3E%3C/clipPath%3E%3Cpath clip-path='url(%23b)' d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z'/%3E%3C/svg%3E");
+        }
+      }
+    }
+  }
+  &:not(.@{treePrefixCls}-show-line) {
+    .@{treePrefixCls}-switcher-noop {
+      background: none;
+    }
+  }
+  &.@{treePrefixCls}-show-line {
+    li:not(:last-child) {
+      > ul {
+        background: none;
+      }
+    }
+  }
+  &-title {
+    margin-left: 5px;
+    width: 100%;
+  }
+  &-node-title {
+    width: 100%;
+    &-selected {
+      background: none;
+      border: 0;
+      opacity: 1;
+    }
+  }
+  &-icon__open {
+    vertical-align: middle;
+    display: inline-block;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3C/svg%3E");
+  }
+  &-icon__close {
+    margin-right: 2px;
+    background-position: -110px 0;
+    vertical-align: top;
+  }
+  &-icon__docu {
+    margin-right: 2px;
+    background-position: -110px -32px;
+    vertical-align: top;
+  }
+  &-icon__customize {
+    margin-right: 2px;
+    vertical-align: top;
+  }
+}
